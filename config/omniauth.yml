@@ -1,0 +1,16 @@
+production: &production
+  github:
+    key: xxxxxxxxxxx
+    secret: XXXXXXXXXXXXXXXXXXXXXXXXX
+  twitter:
+    key: xxxxxxxxxxx
+    secret: XXXXXXXXXXXXXXXXXXXXXXXXX
+
+development: &development
+  <<: *production
+  github:
+    key: xxxxxxxxxxx
+    secret: XXXXXXXXXXXXXXXXXXXXXXXXX
+
+test:
+    <<: *development
