@@ -1,11 +1,14 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+コア機能
 
-Things you may want to cover:
+- ガシャを回すことが出来る
+- ログインが出来る
+- 今までに取得したカード一覧が見える
+- コミット数に応じた数だけガシャが引ける
 
 * Ruby version
+ruby 2.2.3p173 (2015-08-18 revision 51636) [x86_64-darwin15]
 
 * System dependencies
 
