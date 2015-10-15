@@ -1,0 +1,29 @@
+!!!
+%html
+  %head
+    %meta{ charset: "utf-8" }
+    = render 'head_meta'
+    = stylesheet_link_tag 'application'
+    = javascript_include_tag 'header'
+  %body
+    %h1
+      - if @omniauth
+        Authorized
+      - else
+        Authorization Failed
+    = javascript_include_tag 'footer'
+    :javascript
+      success = #{@omniauth.present?};
+
+      function reflectOAuthResult() {
+        var $linkElement, linkElementId, provider;
+        provider = window.name;
+        linkElementId = "#" + provider + "-auth";
+        $linkElement = window.opener.$(linkElementId);
+        App.Utils.Auth.afterCallback($linkElement, success);
+        window.opener.authWaiting[provider] = false
+      };
+
+      $(window).on("beforeunload", reflectOAuthResult());
+
+      setTimeout(window.close, 1000);
