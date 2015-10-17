@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151015072951) do
+ActiveRecord::Schema.define(version: 20151016185625) do
 
   create_table "social_profiles", force: :cascade do |t|
     t.integer  "user_id"
@@ -32,5 +32,9 @@ ActiveRecord::Schema.define(version: 20151015072951) do
 
   add_index "social_profiles", ["provider", "uid"], name: "index_social_profiles_on_provider_and_uid", unique: true
   add_index "social_profiles", ["user_id"], name: "index_social_profiles_on_user_id"
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+  end
 
 end

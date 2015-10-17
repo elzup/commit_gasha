@@ -30,8 +30,8 @@ class SocialProfile < ActiveRecord::Base
     credentials = omniauth['credentials']
     info = omniauth['info']
 
-    self.access_token = credentials['token']
-    self.access_secret = credentials['secret']
+    @access_token = credentials['token']
+    @access_secret = credentials['secret']
     self.credentials = credentials.to_json
     self.email = info['email']
     self.name = info['name']
