@@ -11,7 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151016185625) do
+ActiveRecord::Schema.define(version: 20151018054520) do
+
+  create_table "cards", force: :cascade do |t|
+    t.integer  "rank"
+    t.string   "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "gashas", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "card_id"
+    t.string   "commit_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "gashas", ["card_id"], name: "index_gashas_on_card_id"
+  add_index "gashas", ["commit_id"], name: "index_gashas_on_commit_id", unique: true
+  add_index "gashas", ["user_id"], name: "index_gashas_on_user_id"
 
   create_table "social_profiles", force: :cascade do |t|
     t.integer  "user_id"
