@@ -47,14 +47,3 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
-
-# SNS tutorial
-gem 'devise'
-gem 'omniauth'
-gem 'omniauth-facebook'
-gem 'omniauth-github'
-gem 'omniauth-google-oauth2'
-gem 'omniauth-hatena'
-gem 'omniauth-linkedin'
-gem 'omniauth-mixi'
-gem 'omniauth-twitter'

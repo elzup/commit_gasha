@@ -81,6 +81,3 @@ bower.json
 
 .sass-cache/
 *.css.map
-
-# omniauth keys
-config/omniauth.yml
