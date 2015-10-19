@@ -84,3 +84,7 @@ bower.json
 
 # omniauth keys
 config/omniauth.yml
+
+# dotenv
+.env
+

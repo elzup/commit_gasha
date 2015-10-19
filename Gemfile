@@ -58,3 +58,5 @@ gem 'omniauth-hatena'
 gem 'omniauth-linkedin'
 gem 'omniauth-mixi'
 gem 'omniauth-twitter'
+
+gem 'dotenv-rails'
