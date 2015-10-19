@@ -1,9 +1,0 @@
-# take `provider`, `display_name` and `icon` as local variable
-- connected = current_user.try(:social_profile, provider)
-.social-block.cf
-  .title
-    %i{ class: "#{icon} #{provider}"}
-    %h3= display_name
-  .body
-    = t("auth.#{provider}")
-  = button_tag (connected ? t('auth.connected') : t('auth.connect')), id: "#{provider}-auth", class: "social-connect", disabled: (connected ? 'disabled' : nil)
