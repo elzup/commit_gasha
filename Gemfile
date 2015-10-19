@@ -35,6 +35,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use haml template engine
 gem 'haml-rails'
 
+# Use github_api
+gem 'github_api'
+gem 'rest-client'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -48,13 +52,5 @@ group :development do
   gem 'spring'
 end
 
-# SNS tutorial
-gem 'devise'
-gem 'omniauth'
-gem 'omniauth-facebook'
-gem 'omniauth-github'
-gem 'omniauth-google-oauth2'
-gem 'omniauth-hatena'
-gem 'omniauth-linkedin'
-gem 'omniauth-mixi'
-gem 'omniauth-twitter'
+# dotenv
+gem 'dotenv-rails'
