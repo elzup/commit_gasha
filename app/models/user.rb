@@ -1,4 +1,4 @@
 class User < ActiveRecord::Base
-  devise :omniauthable
 
+  validates :name, presence: true
 end
