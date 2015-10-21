@@ -21,6 +21,7 @@ class GithubController < ApplicationController
 
     response =  RestClient.get("https://api.github.com/user/repos?access_token=#{access_token}")
     datas = JSON.parse(response)
+    pp datas
 
     puts "datas : #{datas}" # It will print the whole github response details as a json
 
