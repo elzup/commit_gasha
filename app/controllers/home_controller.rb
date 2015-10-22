@@ -3,5 +3,12 @@ class HomeController < ApplicationController
   def index
     token = session[:github_token]
     @user = User.login_user(token)
+    if @user.nil?
+      render 'login'
+    end
+  end
+
+  def login
+
   end
 end
