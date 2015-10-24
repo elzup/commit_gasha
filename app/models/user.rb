@@ -12,8 +12,17 @@ class User < ActiveRecord::Base
     @unused_commits ||= commits.select { |commit| !Gasha.exists?(commit_id: commit['url']) }
   end
 
+  def unused_commits_count
+    @unused_commits_count ||= unused_commits.count
+  end
+  alias :remain_commit_num :unused_commits_count
+
   def set_gitinfo(github)
     @github = github
+  end
+
+  def gashas_count
+    @gashas_count ||= gashas.count
   end
 
   def username

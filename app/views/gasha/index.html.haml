@@ -4,6 +4,8 @@
 %p
   %strong Name:
   = @user.username
+  %span= @user.remain_commit_num
+
 %p= link_to 'ログアウト', '/github/logout'
 %p= link_to 'ガシャを引く', '/gasha'
 
