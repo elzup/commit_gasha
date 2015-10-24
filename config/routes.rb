@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :user, controllers: {
-    omniauth_callbacks: "omniauth_callbacks",
-    sessions: "sessions"
-  }
+
+  root :to => 'home#index'
+
+  # auth
+  get '/github/auth' => 'github#authorize'
+  get '/github/callback' => 'github#callback'
+  get '/github/logout' => 'github#logout'
 end
