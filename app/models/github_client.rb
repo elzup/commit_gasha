@@ -4,7 +4,6 @@ class GithubClient
   end
 
   def self.events(username)
-    pp "https://api.github.com/users/#{username}/events"
     JSON.parse(RestClient.get("https://api.github.com/users/#{username}/events"))
   end
 

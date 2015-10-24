@@ -4,6 +4,6 @@ class GashaController < ApplicationController
     if @user.nil?
       redirect_to '/'
     end
-    @card = Gasha.generate
+    @card = @user.turn_card
   end
 end

@@ -1,4 +1,6 @@
 class Card < ActiveRecord::Base
+  has_many :gashas
+  has_many :users, through: :gashas
   IMAGE_URL = 'http://125.6.169.35/idolmaster/image_sp/card/m/'
 
   def img_path
