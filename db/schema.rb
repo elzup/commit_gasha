@@ -11,13 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151021052006) do
+ActiveRecord::Schema.define(version: 20151024003112) do
 
   create_table "cards", force: :cascade do |t|
     t.integer  "rank"
     t.string   "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "imas_hash"
+    t.integer  "imas_id"
   end
 
   create_table "gashas", force: :cascade do |t|
