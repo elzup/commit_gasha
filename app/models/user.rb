@@ -8,6 +8,10 @@ class User < ActiveRecord::Base
     @commits ||= GithubClient.commits(username)
   end
 
+  def unused_commits
+    @unused_commits ||= commits.select { |commit| !Gasha.exists?(commit_id: commit['url']) }
+  end
+
   def set_gitinfo(github)
     @github = github
   end
@@ -16,10 +20,16 @@ class User < ActiveRecord::Base
     @username ||= @github['login']
   end
 
+  def can_turn_card?
+    @can_turn_card ||= unused_commits.first
+  end
+
   def turn_card
     card = Card.random_generate
-    # TODO: to unused commit
-    commit_id = commits[4]['url']
+    unless can_turn_card?
+      return nil
+    end
+    commit_id = unused_commits.first['url']
     gashas.create(card_id: card.id, commit_id: commit_id)
     card
   end
