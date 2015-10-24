@@ -224,6 +224,7 @@ DEPENDENCIES
   haml-rails
   jbuilder (~> 2.0)
   jquery-rails
+  nokogiri
   rails (= 4.2.4)
   rest-client
   rspec-rails (~> 3.0.0)

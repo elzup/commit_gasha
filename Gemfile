@@ -56,3 +56,6 @@ end
 
 # dotenv
 gem 'dotenv-rails'
+
+# Use nokogiri
+gem 'nokogiri'
