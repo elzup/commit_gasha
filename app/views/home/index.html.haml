@@ -1,8 +1,5 @@
 %h1 コミットガシャ
 
-%p ログイン済み
-%p
-  %strong Name:
-  = @user.username
+= render 'shared/user_info'
 %p= link_to 'ログアウト', '/github/logout'
-%p= link_to 'ガシャを引く', '/gasha'
+%p= link_to_if @user.can_turn_card?, 'ガシャを引く', '/gasha'

@@ -1,0 +1,8 @@
+%div.user-info
+  %p
+    %strong GitHubName:
+    = @user.username
+  %p
+    %span 残コミット:
+    = @user.remain_commit_num
+  %p= link_to "ガシャ: #{@user.gashas_count}"
