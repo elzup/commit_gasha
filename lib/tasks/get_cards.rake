@@ -2,7 +2,7 @@ require 'open-uri'
 require 'fileutils'
 
 namespace :get_cards do
-  desc 'get card infos'
+  desc 'get cards infos'
   task :run => :environment do
     url = 'https://github.com/isaisstillalive/imas_cg_hash/raw/master/id2hash.json'
     res = open(url)
