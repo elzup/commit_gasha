@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   end
 
   def unused_commits
-    @unused_commits ||= commits.select { |commit| !Gasha.exists?(commit_id: commit['url']) }
+    commits.select { |commit| !Gasha.exists?(commit_id: commit['url']) }
   end
 
   def unused_commits_count
@@ -34,6 +34,7 @@ class User < ActiveRecord::Base
   end
 
   def turn_card
+    pp unused_commits
     card = Card.random_generate
     unless can_turn_card?
       return nil
@@ -41,7 +42,6 @@ class User < ActiveRecord::Base
     commit = unused_commits.first
     commit_id = commit['url']
     gashas.create(card_id: card.id, commit_id: commit_id)
-    @unused_commits.delete(commit)
     card
   end
 
