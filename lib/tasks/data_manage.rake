@@ -24,4 +24,9 @@ namespace :data_manage do
       card.update_rank_from_id
     end
   end
+
+  desc 'get cards rank data'
+  task :reset_gasha_new_param => :environment do
+    Gasha.update_all(turned: false, card_id: nil)
+  end
 end
