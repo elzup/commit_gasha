@@ -67,7 +67,7 @@ class User < ActiveRecord::Base
       return nil
     end
     commit = unturned_gashas.first
-    commit.update_attribute(:card_id, card.id)
+    commit.update_attributes({ card_id: card.id, turned: true })
     card
   end
 

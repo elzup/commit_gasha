@@ -33,13 +33,13 @@ class Card < ActiveRecord::Base
   end
 
   def self.random_generate
-    # N 60%
-    # R 30%
-    # SR 10%
+    # N 88.5%
+    # R 10%
+    # SR 1.5%
     queues = {
-        Card::RANK_N => 6,
-        Card::RANK_R => 3,
-        Card::RANK_SR => 1
+        Card::RANK_N => 177,
+        Card::RANK_R => 20,
+        Card::RANK_SR => 3
     }
     rank = WeightedRandomizer.new(queues).sample
     Card.where(rank: rank).sample
