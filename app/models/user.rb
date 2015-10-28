@@ -31,7 +31,12 @@ class User < ActiveRecord::Base
 
   # gasha に使用していないコミット
   def unturned_gashas
-    gashas.where(turned: false)
+    @unturned_gashas ||= gashas.where(turned: false)
+  end
+
+  # 引いた gasha
+  def turned_gashas
+    @turned_gashas ||= gashas.where(turned: true)
   end
 
   def unturned_gashas_count
@@ -39,12 +44,13 @@ class User < ActiveRecord::Base
   end
   alias :remain_commit_num :unturned_gashas_count
 
+  def turned_gashas_count
+    turned_gashas.count
+  end
+  alias :gashas_count :turned_gashas_count
+
   def set_gitinfo(github)
     @github = github
-  end
-
-  def gashas_count
-    gashas.count
   end
 
   def username
@@ -52,7 +58,7 @@ class User < ActiveRecord::Base
   end
 
   def can_turn_card?
-    uninserted_commits.count > 0
+    !unturned_gashas.empty?
   end
 
   def turn_card
@@ -61,7 +67,7 @@ class User < ActiveRecord::Base
       return nil
     end
     commit = unturned_gashas.first
-    commit.update_attribute(card_id: card.id)
+    commit.update_attribute(:card_id, card.id)
     card
   end
 
