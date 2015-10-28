@@ -18,6 +18,6 @@ class GithubClient
     events.each do |event|
       commits += event['payload']['commits']
     end
-    commits
+    commits.uniq { |commit| commit['url'] }
   end
 end
