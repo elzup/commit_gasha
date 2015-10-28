@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151024003112) do
+ActiveRecord::Schema.define(version: 20151028014219) do
 
   create_table "cards", force: :cascade do |t|
     t.integer  "rank"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20151024003112) do
     t.string   "commit_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean  "turned"
   end
 
   add_index "gashas", ["card_id"], name: "index_gashas_on_card_id"

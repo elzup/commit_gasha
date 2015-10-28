@@ -8,4 +8,9 @@ class GashaController < ApplicationController
       @card = @user.turn_card
     end
   end
+
+  def import
+    @user = User.login_user(session[:github_token])
+    @num = @user.import_commits
+  end
 end

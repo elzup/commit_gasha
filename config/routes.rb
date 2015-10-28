@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root :to => 'home#index'
 
   get '/gasha' => 'gasha#index'
+  get '/gasha/import' => 'gasha#import'
   get '/user' => 'user#index'
 
   # auth

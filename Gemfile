@@ -62,3 +62,6 @@ gem 'nokogiri'
 
 # for random gasha
 gem 'weighted_randomizer'
+
+# model support
+gem 'activerecord-import'
