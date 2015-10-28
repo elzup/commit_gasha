@@ -59,3 +59,6 @@ gem 'dotenv-rails'
 
 # Use nokogiri
 gem 'nokogiri'
+
+# for random gasha
+gem 'weighted_randomizer'
