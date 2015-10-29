@@ -1,9 +1,9 @@
 %div.user-info
-  %p
-    %strong GitHubName:
+  %div.head
+    %strong
     = @user.username
-  %p
-    %span 残コミット:
+  %div.body
+    %p 残コミット:
     = @user.remain_commit_num
-    %span カード数:
+    %p カード数:
     = @user.gashas_count

@@ -15,4 +15,20 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap-custom";
-body { padding-top: 60px }
+body {
+  padding-top: 60px;
+}
+
+#wrapper {
+  padding: 10px;
+}
+
+.user-info {
+  @extend .panel, .panel-default;
+  .head {
+    @extend .panel-heading;
+  }
+  .body {
+    @extend .panel-body;
+  }
+}
