@@ -3,7 +3,5 @@
     %strong
     = @user.username
   %div.body
-    %p 残コミット:
-    = @user.remain_commit_num
-    %p カード数:
-    = @user.gashas_count
+    %p= "残コミット: #{@user.remain_commit_num}"
+    %p= "カード数: #{@user.gashas_count}"

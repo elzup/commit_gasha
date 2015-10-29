@@ -23,6 +23,10 @@ body {
   padding: 10px;
 }
 
+#menu {
+  @extend .navbar-default, .navbar-fixed-top;
+}
+
 .user-info {
   @extend .panel, .panel-default;
   .head {
