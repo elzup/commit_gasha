@@ -65,3 +65,7 @@ gem 'weighted_randomizer'
 
 # model support
 gem 'activerecord-import'
+
+# Use bootstrap-sass
+gem 'bootstrap-sass', '~> 3.3.5'
+gem 'autoprefixer-rails'
