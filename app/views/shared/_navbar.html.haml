@@ -1,3 +1,16 @@
-%ul.nav.navbar-nav
-  %li{ class: ('active' if controller?('home') and action?('index')) }
-    - link_to 'Home', '/'
+%nav.navbar.navbar-default.navbar-fixed-top
+  // TODO: view icon
+  %div.container-fluid
+    %div.navbar-header
+      = link_to 'CommitGasha', '/', class: 'navbar-brand'
+    %ul.nav.navbar-nav.navbar-right
+      - if user
+        %li
+          = link_to 'ホーム', '/'
+        %li
+          = link_to 'ログアウト', '/logout'
+        %li{ class: ('active' if controller?('gasha')) }
+          = link_to 'ガシャ', '/gasha'
+      - else
+        %li
+          = link_to 'ログイン', '/login'
