@@ -9,4 +9,5 @@
 %body
   %div#wrapper
     = render 'shared/navbar', user: @user
-    = yield
+    %div#container
+      = yield

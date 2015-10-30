@@ -15,12 +15,12 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap-custom";
-body {
-  padding-top: 60px;
-}
 
 #wrapper {
-  padding: 10px;
+  padding-top: 50px;
+  #container {
+    padding: 30px;
+  }
 }
 
 #menu {
@@ -35,4 +35,34 @@ body {
   .body {
     @extend .panel-body;
   }
+}
+
+.card-list {
+  @extend .row;
+}
+
+.card {
+  @extend .panel, .panel-default, .col-sm-3;
+  .head {
+    padding: 5px;
+    h2 {
+      margin: 0;
+      font-size: 20px;
+    }
+    @extend .panel-heading;
+  }
+  .body {
+    @extend .panel-body;
+  }
+}
+
+.top {
+  @extend .row;
+  .page-title {
+    @extend .col-sm-6;
+  }
+  .user-block {
+    @extend .col-sm-6;
+  }
+
 }
