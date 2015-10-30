@@ -1,0 +1,6 @@
+= render 'shared/top', user: @user, title: 'Gasha'
+
+- if @user.can_turn_card?
+  = render 'buttons', user: @user
+- else
+  %p ガシャは引けません, 新しいコミットがある場合はインポートしてください

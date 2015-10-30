@@ -1,0 +1,96 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ */
+@import "bootstrap-sprockets";
+@import "bootstrap-custom";
+
+#wrapper {
+  padding-top: 50px;
+  #container {
+    padding: 30px;
+  }
+}
+
+h1 {
+  color: $brand-danger;
+}
+
+#menu {
+  @extend .navbar-default, .navbar-fixed-top;
+}
+
+.user-info {
+  @extend .panel, .panel-default;
+  .head {
+    @extend .panel-heading;
+    color: $title-text-color;
+  }
+  .body {
+    @extend .panel-body;
+    .params {
+      @extend .row;
+      .params1 {
+        @extend .col-sm-6;
+      }
+      .params2 {
+        @extend .col-sm-6;
+        .import-btn {
+          @extend .btn;
+          background: $brand-primary;
+        }
+      }
+    }
+  }
+}
+
+.card-list {
+  @extend .row;
+}
+
+.login-btn {
+  @extend .btn, .btn-primary, .btn-lg;
+}
+
+.card {
+  @extend .panel, .panel-default, .col-sm-3;
+  .head {
+    padding: 5px;
+    h2 {
+      margin: 0;
+      font-size: 20px;
+      color: $title-text-color;
+    }
+    @extend .panel-heading;
+  }
+  .body {
+    @extend .panel-body;
+  }
+}
+
+.top {
+  @extend .row;
+  .page-title {
+    @extend .col-sm-6;
+  }
+  .user-block {
+    @extend .col-sm-6;
+  }
+
+}
+
+.gasha-btn {
+  @extend .btn, .btn-default;
+}
+
+//= require_tree .
+//= require_self

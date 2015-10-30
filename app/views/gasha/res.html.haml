@@ -1,0 +1,7 @@
+= render 'shared/top', user: @user, title: 'Gasha Result'
+
+= render 'buttons', user: @user
+- if @cards
+  = render @cards
+- else
+  %p error

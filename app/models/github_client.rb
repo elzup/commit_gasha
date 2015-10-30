@@ -4,7 +4,6 @@ class GithubClient
   end
 
   def self.events(username)
-    pp "https://api.github.com/users/#{username}/events"
     JSON.parse(RestClient.get("https://api.github.com/users/#{username}/events"))
   end
 
@@ -19,6 +18,6 @@ class GithubClient
     events.each do |event|
       commits += event['payload']['commits']
     end
-    commits
+    commits.uniq { |commit| commit['url'] }
   end
 end

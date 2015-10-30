@@ -1,0 +1,6 @@
+%div.top
+  %div.page-title
+    %h1= title
+  - if user
+    %div.user-block
+      = render 'shared/user_info', user: user

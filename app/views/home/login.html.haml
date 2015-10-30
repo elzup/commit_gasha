@@ -1,3 +1,4 @@
-%h1 コミットガシャ
+= render 'shared/top', user: @user, title: 'Login'
 
-%p= link_to "Github ログイン", '/github/auth'
+%p you need log github account
+%p= link_to 'Github ログイン', '/login', class: 'login-btn'

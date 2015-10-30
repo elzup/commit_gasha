@@ -1,7 +1,8 @@
-%h1 コミットガシャ
+= render 'shared/top', user: @user, title: 'Home'
 
-%p ログイン済み
-%p
-  %strong Name:
-  = @user.username
-%p= link_to 'ログアウト', '/github/logout'
+- if @user
+  %div.card-list
+    %h2 取得カード
+    = render @user.cards
+- else
+  %p= link_to 'ログイン', '/login'

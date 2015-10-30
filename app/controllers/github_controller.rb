@@ -1,9 +1,10 @@
 class GithubController < ApplicationController
+  skip_before_action :auth_user
 
   GITHUB_CONFIG = Rails.application.secrets.github_app
 
   def authorize
-    address = github.authorize_url :redirect_uri => "http://#{request.host_with_port}/github/callback", :scope => 'repo'
+    address = github.authorize_url :redirect_uri => "http://#{request.host_with_port}/callback", :scope => 'repo'
     redirect_to address
   end
 
