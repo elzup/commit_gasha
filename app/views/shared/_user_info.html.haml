@@ -3,5 +3,9 @@
     %strong
     = @user.username
   %div.body
-    %p= "残コミット: #{@user.remain_commit_num}"
-    %p= "カード数: #{@user.gashas_count}"
+    %div.params
+      %div.params1
+        %p= "残コミット: #{@user.remain_commit_num}"
+        %p= "カード数: #{@user.gashas_count}"
+      %div.params2
+        = link_to 'Import Commit', '/import', class: 'import-btn'

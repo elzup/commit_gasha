@@ -35,6 +35,19 @@
   .body {
     @extend .panel-body;
     color: #555;
+
+    .params {
+      @extend .row;
+      .params1 {
+        @extend .col-sm-6;
+      }
+      .params2 {
+        @extend .col-sm-6;
+        .import-btn {
+          @extend .btn, .btn-info;
+        }
+      }
+    }
   }
 }
 
