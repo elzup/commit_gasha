@@ -1,4 +1,5 @@
 class GithubController < ApplicationController
+  skip_before_action :auth_user
 
   GITHUB_CONFIG = Rails.application.secrets.github_app
 
