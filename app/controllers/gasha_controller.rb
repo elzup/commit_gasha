@@ -8,14 +8,16 @@ class GashaController < ApplicationController
   end
 
   def turn10
+    @user.turn_card10
+    redirect_to '/gasha/res10'
   end
 
   def res
-    @cards = [@user.last_card]
+    @cards = @user.last_card
   end
 
   def res10
-    # TODO: recent 10 card
-    render
+    @cards = @user.last_card10
+    render :res
   end
 end

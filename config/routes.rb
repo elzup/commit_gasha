@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   # actions
   get '/gasha/turn' => 'gasha/turn'
+  get '/gasha/turn10' => 'gasha/turn10'
   get '/gasha/res' => 'gasha/res'
   get '/gasha/res10' => 'gasha/res10'
 
