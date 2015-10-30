@@ -2,6 +2,7 @@
 
 - if @user
   %div.card-list
+    %h2 取得カード
     = render @user.cards
 - else
   %p= link_to 'ログイン', '/login'

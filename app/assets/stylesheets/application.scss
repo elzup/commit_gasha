@@ -25,10 +25,6 @@ h1 {
   color: $brand-danger;
 }
 
-p {
-  color: #333;
-}
-
 #menu {
   @extend .navbar-default, .navbar-fixed-top;
 }
@@ -37,11 +33,10 @@ p {
   @extend .panel, .panel-default;
   .head {
     @extend .panel-heading;
+    color: $title-text-color;
   }
   .body {
     @extend .panel-body;
-    color: #555;
-
     .params {
       @extend .row;
       .params1 {
@@ -50,7 +45,8 @@ p {
       .params2 {
         @extend .col-sm-6;
         .import-btn {
-          @extend .btn, .btn-info;
+          @extend .btn;
+          background: $brand-primary;
         }
       }
     }
@@ -72,6 +68,7 @@ p {
     h2 {
       margin: 0;
       font-size: 20px;
+      color: $title-text-color;
     }
     @extend .panel-heading;
   }
@@ -90,5 +87,10 @@ p {
   }
 
 }
+
+.gasha-btn {
+  @extend .btn, .btn-default;
+}
+
 //= require_tree .
 //= require_self

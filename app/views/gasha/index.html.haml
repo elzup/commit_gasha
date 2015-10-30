@@ -1,7 +1,7 @@
 = render 'shared/top', user: @user, title: 'Gasha'
 
 - if @user.can_turn_card?
-  %p= link_to 'ガシャを引く', '/gasha', class: 'gasha-btn'
+  = link_to 'ガシャを引く', '/gasha', class: 'gasha-btn'
 - else
   %p ガシャは引けません, 新しいコミットがある場合はインポートしてください
 

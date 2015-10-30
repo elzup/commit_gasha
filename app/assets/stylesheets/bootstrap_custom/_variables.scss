@@ -19,7 +19,8 @@ $brand-danger:          #555273;
 //** Background color for `<body>`.
 $body-bg:               $brand-primary + #333;
 //** Global text color on `<body>`.
-$text-color:            ghostwhite;
+$text-color:            #333;
+$title-text-color:      ghostwhite;
 
 //** Global textual link color.
 $link-color:            $brand-danger;
@@ -33,12 +34,12 @@ $navbar-default-bg:                $brand-success + #333;
 $navbar-default-border:            darken($navbar-default-bg, 6.5%);
 
 // // Navbar links
-$navbar-default-link-color:                $text-color;
-$navbar-default-link-hover-color:          $text-color + #111;
+$navbar-default-link-color:                $link-color;
+$navbar-default-link-hover-color:          $link-color + #111;
 $navbar-default-link-hover-bg:             transparent;
-$navbar-default-link-active-color:         $text-color + #111;
+$navbar-default-link-active-color:         $link-color + #111;
 $navbar-default-link-active-bg:            darken($navbar-default-bg, 6.5%);
-$navbar-default-link-disabled-color:       $text-color - #333;
+$navbar-default-link-disabled-color:       $link-color - #333;
 $navbar-default-link-disabled-bg:          transparent;
 
 // Navbar brand label
