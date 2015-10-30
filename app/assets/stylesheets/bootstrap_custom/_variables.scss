@@ -1,0 +1,58 @@
+$gray-base:              #e2eff1;
+$gray-darker:            lighten($gray-base, 13.5%);
+$gray-dark:              lighten($gray-base, 20%);
+$gray:                   lighten($gray-base, 33.5%);
+$gray-light:             lighten($gray-base, 46.7%);
+$gray-lighter:           lighten($gray-base, 93.5%);
+
+$brand-primary:         #b6d5e1;
+$brand-success:         #65799b;
+$brand-info:            #65799b;
+$brand-warning:         #555273;
+$brand-danger:          #555273;
+
+
+//== Scaffolding
+//
+//## Settings for some of the most global styles.
+
+//** Background color for `<body>`.
+$body-bg:               $brand-primary + #333;
+//** Global text color on `<body>`.
+$text-color:            #333;
+$title-text-color:      ghostwhite;
+
+//** Global textual link color.
+$link-color:            $brand-danger;
+//** Link hover color set via `darken()` function.
+$link-hover-color:      darken($link-color, 15%);
+//** Link hover decoration.
+$link-hover-decoration: underline;
+
+$navbar-default-color:             $brand-success;
+$navbar-default-bg:                $brand-success + #333;
+$navbar-default-border:            darken($navbar-default-bg, 6.5%);
+
+// // Navbar links
+$navbar-default-link-color:                $link-color;
+$navbar-default-link-hover-color:          $link-color + #111;
+$navbar-default-link-hover-bg:             transparent;
+$navbar-default-link-active-color:         $link-color + #111;
+$navbar-default-link-active-bg:            darken($navbar-default-bg, 6.5%);
+$navbar-default-link-disabled-color:       $link-color - #333;
+$navbar-default-link-disabled-bg:          transparent;
+
+// Navbar brand label
+$navbar-default-brand-color:               $navbar-default-link-color;
+$navbar-default-brand-hover-color:         darken($navbar-default-brand-color, 10%);
+$navbar-default-brand-hover-bg:            transparent;
+
+// Navbar toggle
+$navbar-default-toggle-hover-bg:           #ddd;
+$navbar-default-toggle-icon-bar-bg:        #888;
+$navbar-default-toggle-border-color:       #ddd;
+
+$panel-default-text:          $text-color;
+// $panel-default-border:        $brand-info;
+$panel-default-heading-bg:    $brand-success + #222;
+$panel-bg:    $brand-success + #777;

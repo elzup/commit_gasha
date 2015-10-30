@@ -1,6 +1,8 @@
-%h1 コミットガシャ
+= render 'shared/top', user: @user, title: 'Home'
 
-= render 'shared/user_info'
-%p= link_to 'ログアウト', '/github/logout'
-%p= link_to 'コミットインポート', '/gasha/import'
-%p= link_to_if @user.can_turn_card?, 'ガシャを引く', '/gasha'
+- if @user
+  %div.card-list
+    %h2 取得カード
+    = render @user.cards
+- else
+  %p= link_to 'ログイン', '/login'

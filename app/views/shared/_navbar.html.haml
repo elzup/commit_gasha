@@ -1,0 +1,16 @@
+%nav#menu
+  // TODO: view icon
+  %div.container-fluid
+    %div.navbar-header
+      = link_to 'CommitGasha', '/', class: 'navbar-brand'
+    %ul.nav.navbar-nav.navbar-right
+      - if user
+        %li{ class: ('active' if controller?('home')) }
+          = link_to 'ホーム', '/'
+        %li{ class: ('active' if controller?('gasha')) }
+          = link_to 'ガシャ', '/gasha'
+        %li
+          = link_to 'ログアウト', '/logout'
+      - else
+        %li
+          = link_to 'ログイン', '/login'

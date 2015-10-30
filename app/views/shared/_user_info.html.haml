@@ -1,8 +1,11 @@
 %div.user-info
-  %p
-    %strong GitHubName:
+  %div.head
+    %strong
     = @user.username
-  %p
-    %span 残コミット:
-    = @user.remain_commit_num
-  %p= link_to "ガシャ: #{@user.gashas_count}", '/user'
+  %div.body
+    %div.params
+      %div.params1
+        %p= "残コミット: #{@user.remain_commit_num}"
+        %p= "カード数: #{@user.gashas_count}"
+      %div.params2
+        = link_to 'Import Commit', '/import', class: 'import-btn'

@@ -1,0 +1,6 @@
+= render 'shared/top', user: @user, title: 'Commit Import'
+
+- if @num > 0
+  %p= "#{@num}個 commit をインポートしました"
+- else
+  %p 新しく読み込んだ commit はありません
