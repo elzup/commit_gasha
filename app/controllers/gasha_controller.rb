@@ -1,11 +1,23 @@
 class GashaController < ApplicationController
   def index
-    @user = User.login_user(session[:github_token])
-    if @user.nil?
-      redirect_to '/'
-    end
-    if @user.can_turn_card?
-      @card = @user.turn_card
-    end
+  end
+
+  def turn
+    @user.turn_card
+    redirect_to '/gasha/res'
+  end
+
+  def turn10
+    @user.turn_card10
+    redirect_to '/gasha/res10'
+  end
+
+  def res
+    @cards = @user.last_card
+  end
+
+  def res10
+    @cards = @user.last_card10
+    render :res
   end
 end
