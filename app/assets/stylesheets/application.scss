@@ -10,8 +10,6 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
- *= require_self
  */
 @import "bootstrap-sprockets";
 @import "bootstrap-custom";
@@ -21,6 +19,14 @@
   #container {
     padding: 30px;
   }
+}
+
+h1 {
+  color: $brand-danger;
+}
+
+p {
+  color: #333;
 }
 
 #menu {
@@ -55,6 +61,10 @@
   @extend .row;
 }
 
+.login-btn {
+  @extend .btn, .btn-primary, .btn-lg;
+}
+
 .card {
   @extend .panel, .panel-default, .col-sm-3;
   .head {
@@ -80,3 +90,5 @@
   }
 
 }
+//= require_tree .
+//= require_self

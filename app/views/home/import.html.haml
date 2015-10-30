@@ -1,9 +1,6 @@
-%h1 コミットガシャ
+= render 'shared/top', user: @user, title: 'Commit Import'
 
-%p コミットインポート
-
-%p= link_to 'ログアウト', '/logout'
-%p= link_to_if @user.can_turn_card?, 'ガシャを引く', '/gasha'
-= render 'shared/user_info'
-
-%p= "#{@num}個 commit をインポートしました"
+- if @num > 0
+  %p= "#{@num}個 commit をインポートしました"
+- else
+  %p 新しく読み込んだ commit はありません

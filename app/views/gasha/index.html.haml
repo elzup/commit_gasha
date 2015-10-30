@@ -1,14 +1,11 @@
-%h1 コミットガシャ
+= render 'shared/top', user: @user, title: 'Gasha'
 
-%p ガシャ結果
-
-%p= link_to 'ログアウト', '/logout'
-%p= link_to_if @user.can_turn_card?, 'ガシャを引く', '/gasha'
-= render 'shared/user_info'
+- if @user.can_turn_card?
+  %p= link_to 'ガシャを引く', '/gasha', class: 'gasha-btn'
+- else
+  %p ガシャは引けません, 新しいコミットがある場合はインポートしてください
 
 - if @card
   %div
     %h2= @card.title
     %img{ src: @card.img_path }
-- else
-  %p ガシャは引けません
