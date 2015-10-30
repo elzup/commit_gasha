@@ -1,11 +1,6 @@
 = render 'shared/top', user: @user, title: 'Gasha'
 
 - if @user.can_turn_card?
-  = link_to 'ガシャを引く', '/gasha', class: 'gasha-btn'
+  = render 'buttons'
 - else
   %p ガシャは引けません, 新しいコミットがある場合はインポートしてください
-
-- if @card
-  %div
-    %h2= @card.title
-    %img{ src: @card.img_path }

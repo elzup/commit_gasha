@@ -17,8 +17,6 @@ class User < ActiveRecord::Base
   # gasha に新しいコミットを登録する
   # @return [Number] new inserted commit count
   def import_commits
-    pp fetch_commits
-    pp uninserted_commits
     insert_gashas = []
     uninserted_commits.each do |commit|
       insert_gashas << gashas.build(turned: false, commit_id: commit['url'])
@@ -51,6 +49,10 @@ class User < ActiveRecord::Base
 
   def set_gitinfo(github)
     @github = github
+  end
+
+  def last_card
+    Card.find(turned_gashas.last.card_id)
   end
 
   def username
