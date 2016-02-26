@@ -113,6 +113,7 @@ GEM
       thor (>= 0.14, < 2.0)
     json (1.8.3)
     jwt (1.5.1)
+    lazysizes_rails (0.0.2)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
@@ -245,6 +246,7 @@ DEPENDENCIES
   haml-rails
   jbuilder (~> 2.0)
   jquery-rails
+  lazysizes_rails
   nokogiri
   pry-rails
   rails (= 4.2.4)
