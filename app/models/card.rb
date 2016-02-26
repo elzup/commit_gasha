@@ -25,7 +25,7 @@ class Card < ActiveRecord::Base
   end
 
   def self.hash_regist(imas_id, value)
-    Card.create(
+    Card.find_or_create_by(
         title: value['name'],
         imas_id: imas_id,
         imas_hash: value['hash']
