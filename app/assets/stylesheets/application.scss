@@ -75,6 +75,16 @@ h1 {
   .body {
     @extend .panel-body;
   }
+
+}
+
+.card-min-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-min {
+  @extend .panel, .panel-default;
 }
 
 .top {
