@@ -51,4 +51,9 @@ class Card < ActiveRecord::Base
   def self.random_id
     Random.new.rand(0..Card.count)
   end
+
+  # Rank にかかわらずランダムにサンプル
+  def self.flat_sample(n=10)
+    n.times.map { self.find( self.pluck(:id).sample ) }
+  end
 end

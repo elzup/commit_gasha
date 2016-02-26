@@ -2,6 +2,9 @@
 
 - if @user
   %div.card-list
+    %h2 ランダム PickUp
+    = render @random_cards
+  %div.card-list
     %h2 取得カード
     = render @user.cards
 - else
