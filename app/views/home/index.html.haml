@@ -6,6 +6,6 @@
     = render @random_cards
   %h2 取得カード
   %div.card-min-list
-    = render 'cards/cards_min', cards: @user.cards
+    = render 'cards/cards_min', cards: @cards
 - else
   %p= link_to 'ログイン', '/login'
