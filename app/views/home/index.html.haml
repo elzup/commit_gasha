@@ -1,8 +1,11 @@
 = render 'shared/top', user: @user, title: 'Home'
 
 - if @user
+  %h2 ランダム PickUp
   %div.card-list
-    %h2 取得カード
-    = render @user.cards
+    = render @random_cards
+  %h2 取得カード
+  %div.card-min-list
+    = render 'cards/cards_min', cards: @cards
 - else
   %p= link_to 'ログイン', '/login'

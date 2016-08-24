@@ -4,6 +4,8 @@ class HomeController < ApplicationController
 
   def index
     @user = User.login_user(session[:github_token])
+    @random_cards = Card.flat_sample(3)
+    @cards = @user.cards.uniq
     if @user.nil?
       render 'login'
     end

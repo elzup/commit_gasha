@@ -1,7 +1,7 @@
 class Card < ActiveRecord::Base
   has_many :gashas
   has_many :users, through: :gashas
-  IMAGE_URL = 'http://125.6.169.35/idolmaster/image_sp/card/m/'
+
   # HACK
   RANK_N = 0
   RANK_NP = 1
@@ -11,7 +11,7 @@ class Card < ActiveRecord::Base
   RANK_SRP = 5
 
   def img_path
-    "#{IMAGE_URL}#{imas_hash}.jpg"
+    @img_path ||= ImagePath.new(imas_hash)
   end
 
   def rank_from_imas_id
@@ -25,7 +25,7 @@ class Card < ActiveRecord::Base
   end
 
   def self.hash_regist(imas_id, value)
-    Card.create(
+    Card.find_or_create_by(
         title: value['name'],
         imas_id: imas_id,
         imas_hash: value['hash']
@@ -50,5 +50,10 @@ class Card < ActiveRecord::Base
 
   def self.random_id
     Random.new.rand(0..Card.count)
+  end
+
+  # Rank にかかわらずランダムにサンプル
+  def self.flat_sample(n=10)
+    n.times.map { self.find( self.pluck(:id).sample ) }
   end
 end
