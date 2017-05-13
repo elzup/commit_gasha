@@ -26,7 +26,11 @@ class GithubClient
     repos = GithubClient.repos(username)
     commits = []
     repos[0...10].each do |repo|
-      commits += repo_commits(repo)
+      begin
+        commits += repo_commits(repo)
+      rescue => e
+        puts(e)
+      end
     end
     commits
   end
